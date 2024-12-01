@@ -1,0 +1,979 @@
+<html>
+<head>
+    <title>Form Pendataan Internet Satuan Pendidikan</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        .form-container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: auto;
+        }
+        .form-container h2 {
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .form-container legend {
+            font-weight: 500;
+            margin-bottom: 10px;
+            color: #555;
+        }
+        .form-container .form-group {
+            margin-bottom: 20px;
+        }
+        .form-container .form-control {
+            border-radius: 5px;
+            border: 1px solid #ced4da;
+        }
+        .form-container .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            font-weight: 500;
+            border-radius: 5px;
+            padding: 10px 20px;
+        }
+        .form-container .form-check-label {
+            margin-left: 10px;
+        }
+        .btn-group-toggle .btn {
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        .btn-group-toggle .btn.active {
+            background-color: #007bff;
+            color: white;
+        }
+        .segment {
+            background-color: #f1f1f1;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .segment legend {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #333;
+        }
+        .segment .icon {
+            margin-right: 10px;
+            color: #000;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+            padding-top: 60px;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 400px;
+            text-align: center;
+            border-radius: 10px;
+        }
+        .checkmark {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: block;
+            stroke-width: 2;
+            stroke: #4CAF50;
+            stroke-miterlimit: 10;
+            margin: 10% auto;
+            box-shadow: inset 0px 0px 0px #4CAF50;
+            animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+        }
+        .checkmark__circle {
+            stroke-dasharray: 166;
+            stroke-dashoffset: 166;
+            stroke-width: 2;
+            stroke-miterlimit: 10;
+            stroke: #4CAF50;
+            fill: none;
+            animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+        }
+        .checkmark__check {
+            transform-origin: 50% 50%;
+            stroke-dasharray: 48;
+            stroke-dashoffset: 48;
+            animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.4s forwards;
+        }
+        @keyframes stroke {
+            100% {
+                stroke-dashoffset: 0;
+            }
+        }
+        @keyframes scale {
+            0%, 100% {
+                transform: none;
+            }
+            50% {
+                transform: scale3d(1.1, 1.1, 1);
+            }
+        }
+        @keyframes fill {
+            100% {
+                box-shadow: inset 0px 0px 0px 30px #4CAF50;
+            }
+        }
+        .guide-button {
+            display: inline-flex;
+            align-items: center;
+            margin-left: 10px;
+            background-color: #17a2b8;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .guide-button i {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <form action="https://docs.google.com/forms/d/e/1FAIpQLSdRACDPO8cH40vv6jeHgszBcelLkWmJlC7NH6-7hFlzNr7oUw/formResponse"
+                  target="_self"
+                  id="bootstrapForm"
+                  method="POST">
+                <fieldset>
+                    <h2 class="text-center mb-4">Pendataan Internet Satuan Pendidikan</h2>
+                    <p class="text-center mb-4">Lingkup Dinas Pendidikan Kabupaten Hulu Sungai Tengah</p>
+                </fieldset>
+
+                <div class="segment">
+                    <fieldset>
+                        <legend for="387336179"><i class="fas fa-school icon"></i>Nama Satuan Pendidikan</legend>
+                        <div class="form-group">
+                            <select id="387336179" name="entry.1753606034" class="form-control select2" required>
+                                <option value="" disabled selected>Pilih Satuan Pendidikan</option>
+                                <option value="KB MARHAMAH">KB MARHAMAH</option>
+<option value="KB Mukhbita">KB Mukhbita</option>
+<option value="KB PELITA HATI">KB PELITA HATI</option>
+<option value="KB TUNAS MERATUS">KB TUNAS MERATUS</option>
+<option value="KB QURRATA AYUN">KB QURRATA AYUN</option>
+<option value="KB LOKLAGA RIA">KB LOKLAGA RIA</option>
+<option value="KB MURAKATA">KB MURAKATA</option>
+<option value="KB Jannah">KB Jannah</option>
+<option value="KB Mekar Sari">KB Mekar Sari</option>
+<option value="KB TERPADU AISYIYAH MAWADDAH">KB TERPADU AISYIYAH MAWADDAH</option>
+<option value="KB KASIH IBU">KB KASIH IBU</option>
+<option value="KB TUNAS BANGSA">KB TUNAS BANGSA</option>
+<option value="KB Harapan Bunda">KB Harapan Bunda</option>
+<option value="KB ANGGREK">KB ANGGREK</option>
+<option value="KB BINTANG KECIL">KB BINTANG KECIL</option>
+<option value="KB. Serunai">KB. Serunai</option>
+<option value="KB KARTIKA JAYA KOORDINATOR XXXXIV YONIF 621">KB KARTIKA JAYA KOORDINATOR XXXXIV YONIF 621</option>
+<option value="KB ANAK BANGSA">KB ANAK BANGSA</option>
+<option value="KB GUNTUNG CERIA">KB GUNTUNG CERIA</option>
+<option value="KB PKK Pihandam">KB PKK Pihandam</option>
+<option value="KB AL AMIN">KB AL AMIN</option>
+<option value="KB AL-HANIF">KB AL-HANIF</option>
+<option value="KB CEMPAKA">KB CEMPAKA</option>
+<option value="KB Nusa Indah">KB Nusa Indah</option>
+<option value="KB TERPADU CERDAS MANDIRI">KB TERPADU CERDAS MANDIRI</option>
+<option value="KB ISLAM TERPADU AL-KHAIR">KB ISLAM TERPADU AL-KHAIR</option>
+<option value="KB Citra Tunas Bangsa">KB Citra Tunas Bangsa</option>
+<option value="KB HARAPAN BERSAMA">KB HARAPAN BERSAMA</option>
+<option value="KB ANAK CERIA">KB ANAK CERIA</option>
+<option value="KB ANGGREK">KB ANGGREK</option>
+<option value="KB Sinar Pagi">KB Sinar Pagi</option>
+<option value="KB BENAWA CERIA">KB BENAWA CERIA</option>
+<option value="KB Bintang Kejora">KB Bintang Kejora</option>
+<option value="KB LESTARI">KB LESTARI</option>
+<option value="KB Ashobah">KB Ashobah</option>
+<option value="KB PERMATA BUNDA">KB PERMATA BUNDA</option>
+<option value="KB AL-HUSNA">KB AL-HUSNA</option>
+<option value="KB PERMATA BUNDA">KB PERMATA BUNDA</option>
+<option value="KB RAUDATUL ATFAL MUSLIMAT NU">KB RAUDATUL ATFAL MUSLIMAT NU</option>
+<option value="KB AL-JARIAH">KB AL-JARIAH</option>
+<option value="KB AL - HUSNA">KB AL - HUSNA</option>
+<option value="KB KENANGA">KB KENANGA</option>
+<option value="KB KEMAKMURAN">KB KEMAKMURAN</option>
+<option value="KB KASIH BUNDA SARI BUNGA">KB KASIH BUNDA SARI BUNGA</option>
+<option value="KB. Wibawa">KB. Wibawa</option>
+<option value="KB GENERASI BERBUDI">KB GENERASI BERBUDI</option>
+<option value="KB Bina Bersama Gayaba">KB Bina Bersama Gayaba</option>
+<option value="KB TRISULA">KB TRISULA</option>
+<option value="KB KASIH IBU">KB KASIH IBU</option>
+<option value="KB Permata Hati 1">KB Permata Hati 1</option>
+<option value="KB AL - HIDAYAH">KB AL - HIDAYAH</option>
+<option value="KB KARUNIA">KB KARUNIA</option>
+<option value="KB PERMATA INDAH">KB PERMATA INDAH</option>
+<option value="KB AN-NUR">KB AN-NUR</option>
+<option value="PKBM IKHLAS BERJUANG">PKBM IKHLAS BERJUANG</option>
+<option value="PKBM AS SYAR`IYAH">PKBM AS SYAR`IYAH</option>
+<option value="PKBM AL UMM BARABAI">PKBM AL UMM BARABAI</option>
+<option value="PKBM SATRIA">PKBM SATRIA</option>
+<option value="PKBM Dhiyaul Amin">PKBM Dhiyaul Amin</option>
+<option value="PKBM SUMBER ILMU">PKBM SUMBER ILMU</option>
+<option value="PKBM SUKA MAJU">PKBM SUKA MAJU</option>
+<option value="PKBM ANGGREK">PKBM ANGGREK</option>
+<option value="PKBM Melati">PKBM Melati</option>
+<option value="PKBM SERUMPUN">PKBM SERUMPUN</option>
+<option value="PKBM As Salam">PKBM As Salam</option>
+<option value="PKBM BERKAT USAHA">PKBM BERKAT USAHA</option>
+<option value="SD NEGERI MURUNG TAAL">SD NEGERI MURUNG TAAL</option>
+<option value="SD NEGERI 1 AWANG BESAR">SD NEGERI 1 AWANG BESAR</option>
+<option value="SD NEGERI 2 BANUA BATUNG">SD NEGERI 2 BANUA BATUNG</option>
+<option value="SD NEGERI 3 BARIKIN">SD NEGERI 3 BARIKIN</option>
+<option value="SD NEGERI 2 MANDINGIN">SD NEGERI 2 MANDINGIN</option>
+<option value="SD NEGERI 2 BARU">SD NEGERI 2 BARU</option>
+<option value="SD NEGERI 3 HARUYAN DAYAK">SD NEGERI 3 HARUYAN DAYAK</option>
+<option value="SD NEGERI 2 HARUYAN SEBERANG">SD NEGERI 2 HARUYAN SEBERANG</option>
+<option value="SD NEGERI MAHELA">SD NEGERI MAHELA</option>
+<option value="SD NEGERI 2 BULUAN">SD NEGERI 2 BULUAN</option>
+<option value="SD NEGERI 4 BARIKIN">SD NEGERI 4 BARIKIN</option>
+<option value="SD NEGERI DURIAN GANTANG">SD NEGERI DURIAN GANTANG</option>
+<option value="SD NEGERI 1 JATUH">SD NEGERI 1 JATUH</option>
+<option value="SD NEGERI 2 PANGGUNG">SD NEGERI 2 PANGGUNG</option>
+<option value="SD NEGERI 2 KARATUNGAN">SD NEGERI 2 KARATUNGAN</option>
+<option value="SD NEGERI 3 MANGUNANG SEBERANG">SD NEGERI 3 MANGUNANG SEBERANG</option>
+<option value="SD NEGERI 1 HARUYAN DAYAK">SD NEGERI 1 HARUYAN DAYAK</option>
+<option value="SD NEGERI 1 PAJUKUNGAN">SD NEGERI 1 PAJUKUNGAN</option>
+<option value="SD NEGERI 1 DATAR AJAB">SD NEGERI 1 DATAR AJAB</option>
+<option value="SD NEGERI 1 BANUA KEPAYANG">SD NEGERI 1 BANUA KEPAYANG</option>
+<option value="SD NEGERI 1 TABUDARAT HILIR">SD NEGERI 1 TABUDARAT HILIR</option>
+<option value="SD NEGERI 2 RANGAS">SD NEGERI 2 RANGAS</option>
+<option value="SD NEGERI 1 BARABAI TIMUR">SD NEGERI 1 BARABAI TIMUR</option>
+<option value="SD NEGERI 1 BARABAI BARAT">SD NEGERI 1 BARABAI BARAT</option>
+<option value="SD NEGERI 2 HARUYAN DAYAK">SD NEGERI 2 HARUYAN DAYAK</option>
+<option value="SD NEGERI ANDUHUM">SD NEGERI ANDUHUM</option>
+<option value="SD NEGERI CUKAN LIPAI">SD NEGERI CUKAN LIPAI</option>
+<option value="SD NEGERI SUNGAI JARANIH">SD NEGERI SUNGAI JARANIH</option>
+<option value="SD NEGERI 1 MURUNG A">SD NEGERI 1 MURUNG A</option>
+<option value="SD IT TARBIATUL AULAD">SD IT TARBIATUL AULAD</option>
+<option value="SD NEGERI ALUAN BESAR">SD NEGERI ALUAN BESAR</option>
+<option value="SD NEGERI 2 KIAS">SD NEGERI 2 KIAS</option>
+<option value="SD NEGERI 1 BANUA HANYAR">SD NEGERI 1 BANUA HANYAR</option>
+<option value="SD NEGERI 2 PAGAT">SD NEGERI 2 PAGAT</option>
+<option value="SD NEGERI 1 TAPUK">SD NEGERI 1 TAPUK</option>
+<option value="SD NEGERI ILUNG">SD NEGERI ILUNG</option>
+<option value="SD NEGERI 1 PANGGANG MARAK">SD NEGERI 1 PANGGANG MARAK</option>
+<option value="SD NEGERI 1 ILUNG PASAR LAMA">SD NEGERI 1 ILUNG PASAR LAMA</option>
+<option value="SD NEGERI 3 KAYU RABAH">SD NEGERI 3 KAYU RABAH</option>
+<option value="SD NEGERI 2 BANUA HANYAR">SD NEGERI 2 BANUA HANYAR</option>
+<option value="SD NEGERI BAKAPAS">SD NEGERI BAKAPAS</option>
+<option value="SD NEGERI NATIH">SD NEGERI NATIH</option>
+<option value="SD NEGERI 2 PENGAMBAU HULU">SD NEGERI 2 PENGAMBAU HULU</option>
+<option value="SD NEGERI 2 BARABAI DARAT">SD NEGERI 2 BARABAI DARAT</option>
+<option value="SD NEGERI 1 PAGAT">SD NEGERI 1 PAGAT</option>
+<option value="SD NEGERI 2 MANGUNANG SEBERANG">SD NEGERI 2 MANGUNANG SEBERANG</option>
+<option value="SD NEGERI 2 PAYA">SD NEGERI 2 PAYA</option>
+<option value="SD NEGERI 2 AWANG">SD NEGERI 2 AWANG</option>
+<option value="SD NEGERI 1 BANUA KUPANG">SD NEGERI 1 BANUA KUPANG</option>
+<option value="SD NEGERI PALAJAU">SD NEGERI PALAJAU</option>
+<option value="SD NEGERI 1 SUNGAI BULUH">SD NEGERI 1 SUNGAI BULUH</option>
+<option value="SD NEGERI 1 PAYA">SD NEGERI 1 PAYA</option>
+<option value="SD NEGERI LAYUH">SD NEGERI LAYUH</option>
+<option value="SD NEGERI ANDANG">SD NEGERI ANDANG</option>
+<option value="SD NEGERI 3 LABUNGANAK">SD NEGERI 3 LABUNGANAK</option>
+<option value="SD NEGERI 2 LUNJUK">SD NEGERI 2 LUNJUK</option>
+<option value="SD NEGERI 1 TELANG">SD NEGERI 1 TELANG</option>
+<option value="SD NEGERI 2 ALUAN">SD NEGERI 2 ALUAN</option>
+<option value="SD NEGERI 3 BANUA KUPANG">SD NEGERI 3 BANUA KUPANG</option>
+<option value="SD NEGERI PANDANU">SD NEGERI PANDANU</option>
+<option value="SD NEGERI 4 MURUNG B">SD NEGERI 4 MURUNG B</option>
+<option value="SD NEGERI 1 BANUA BATUNG">SD NEGERI 1 BANUA BATUNG</option>
+<option value="SD NEGERI PEMBAKULAN">SD NEGERI PEMBAKULAN</option>
+<option value="SD NEGERI 2 ILUNG PASAR LAMA">SD NEGERI 2 ILUNG PASAR LAMA</option>
+<option value="SD NEGERI KECIL JUHU">SD NEGERI KECIL JUHU</option>
+<option value="SD NEGERI 1 BULUAN">SD NEGERI 1 BULUAN</option>
+<option value="SD NEGERI DANGU">SD NEGERI DANGU</option>
+<option value="SD NEGERI 1 KINDINGAN">SD NEGERI 1 KINDINGAN</option>
+<option value="SD NEGERI 2 PANTAI HAMBAWANG TIMUR">SD NEGERI 2 PANTAI HAMBAWANG TIMUR</option>
+<option value="SD NEGERI 3 KINDINGAN">SD NEGERI 3 KINDINGAN</option>
+<option value="SD NEGERI 2 PANGGANG MARAK">SD NEGERI 2 PANGGANG MARAK</option>
+<option value="SD IBNUL AMIN">SD IBNUL AMIN</option>
+<option value="SD NEGERI PAUH">SD NEGERI PAUH</option>
+<option value="SD NEGERI PENGAMBAU HILIR LUAR">SD NEGERI PENGAMBAU HILIR LUAR</option>
+<option value="SD NEGERI 4 BANUA KUPANG">SD NEGERI 4 BANUA KUPANG</option>
+<option value="SD NEGERI 1 LIMPASU">SD NEGERI 1 LIMPASU</option>
+<option value="SD NEGERI 3 MANDINGIN">SD NEGERI 3 MANDINGIN</option>
+<option value="SD NEGERI 2 BARABAI TIMUR">SD NEGERI 2 BARABAI TIMUR</option>
+<option value="SD NEGERI 2 PAJUKUNGAN">SD NEGERI 2 PAJUKUNGAN</option>
+<option value="SD NEGERI BARABAI UTARA">SD NEGERI BARABAI UTARA</option>
+<option value="SD NEGERI MAHANG PUTAT">SD NEGERI MAHANG PUTAT</option>
+<option value="SD NEGERI 2 KAHAKAN">SD NEGERI 2 KAHAKAN</option>
+<option value="SD NEGERI 2 SUMANGGI">SD NEGERI 2 SUMANGGI</option>
+<option value="SD NEGERI HAWANG">SD NEGERI HAWANG</option>
+<option value="SD NEGERI 1 TELUK MESJID">SD NEGERI 1 TELUK MESJID</option>
+<option value="SD NEGERI 2 JATUH">SD NEGERI 2 JATUH</option>
+<option value="SD NEGERI RANTAU BUJUR">SD NEGERI RANTAU BUJUR</option>
+<option value="SD NEGERI HALIAU">SD NEGERI HALIAU</option>
+<option value="SD NEGERI KABANG">SD NEGERI KABANG</option>
+<option value="SD NEGERI 1 MAHANG MATANG LANDUNG">SD NEGERI 1 MAHANG MATANG LANDUNG</option>
+<option value="SD NEGERI 1 JAMIL">SD NEGERI 1 JAMIL</option>
+<option value="SD NEGERI 1 BATU TANGGA">SD NEGERI 1 BATU TANGGA</option>
+<option value="SD NEGERI 2 TABAT">SD NEGERI 2 TABAT</option>
+<option value="SD NEGERI KECIL DATAR BATUNG">SD NEGERI KECIL DATAR BATUNG</option>
+<option value="SD NEGERI 1 PANTAI HAMBAWANG BARAT">SD NEGERI 1 PANTAI HAMBAWANG BARAT</option>
+<option value="SD NEGERI 3 BENAWA TENGAH">SD NEGERI 3 BENAWA TENGAH</option>
+<option value="SD ISLAM TERPADU AL KHAIR">SD ISLAM TERPADU AL KHAIR</option>
+<option value="SD NEGERI 1 PANGGUNG">SD NEGERI 1 PANGGUNG</option>
+<option value="SD NEGERI 2 TANAH HABANG">SD NEGERI 2 TANAH HABANG</option>
+<option value="SD NEGERI PENGAMBAU HILIR DALAM">SD NEGERI PENGAMBAU HILIR DALAM</option>
+<option value="SD NEGERI ABUNG SURAPATI">SD NEGERI ABUNG SURAPATI</option>
+<option value="SD NEGERI SUMBAI">SD NEGERI SUMBAI</option>
+<option value="SD NEGERI 1 ALAT">SD NEGERI 1 ALAT</option>
+<option value="SD NEGERI 1 BAKTI">SD NEGERI 1 BAKTI</option>
+<option value="SD NEGERI 1 SETIAP">SD NEGERI 1 SETIAP</option>
+<option value="SD NEGERI 2 TILAHAN">SD NEGERI 2 TILAHAN</option>
+<option value="SD NEGERI 2 TAAL">SD NEGERI 2 TAAL</option>
+<option value="SD NEGERI 2 MAHANG SUNGAI HANYAR">SD NEGERI 2 MAHANG SUNGAI HANYAR</option>
+<option value="SD NEGERI 2 BANUA KUPANG">SD NEGERI 2 BANUA KUPANG</option>
+<option value="SD NEGERI 1 TILAHAN">SD NEGERI 1 TILAHAN</option>
+<option value="SD NEGERI BANUA RANTAU">SD NEGERI BANUA RANTAU</option>
+<option value="SD NEGERI 2 WAWAI">SD NEGERI 2 WAWAI</option>
+<option value="SD NEGERI 5 MANGUNANG SEBERANG">SD NEGERI 5 MANGUNANG SEBERANG</option>
+<option value="SD NEGERI BULAYAK">SD NEGERI BULAYAK</option>
+<option value="SD NEGERI 3 BARABAI TIMUR">SD NEGERI 3 BARABAI TIMUR</option>
+<option value="SD NEGERI 2 PEMANGKIH">SD NEGERI 2 PEMANGKIH</option>
+<option value="SD NEGERI BANUA ASAM">SD NEGERI BANUA ASAM</option>
+<option value="SD NEGERI TUNGKUP">SD NEGERI TUNGKUP</option>
+<option value="SD NEGERI 2 DATAR AJAB">SD NEGERI 2 DATAR AJAB</option>
+<option value="SD NEGERI 1 BIRAYANG">SD NEGERI 1 BIRAYANG</option>
+<option value="SD NEGERI 1 BATU PANGGUNG">SD NEGERI 1 BATU PANGGUNG</option>
+<option value="SD NEGERI 2 MAHANG MATANG LANDUNG">SD NEGERI 2 MAHANG MATANG LANDUNG</option>
+<option value="SD NEGERI 1 SUNGAI HARANG">SD NEGERI 1 SUNGAI HARANG</option>
+<option value="SD NEGERI 1 TABAT">SD NEGERI 1 TABAT</option>
+<option value="SD NEGERI 1 KAYU BAWANG">SD NEGERI 1 KAYU BAWANG</option>
+<option value="SD NEGERI TABUDARAT HULU">SD NEGERI TABUDARAT HULU</option>
+<option value="SD NEGERI TIMBUK BAHALANG">SD NEGERI TIMBUK BAHALANG</option>
+<option value="SD NEGERI TARAS PADANG">SD NEGERI TARAS PADANG</option>
+<option value="SD NEGERI 3 BARABAI DARAT">SD NEGERI 3 BARABAI DARAT</option>
+<option value="SD NEGERI 3 GUHA">SD NEGERI 3 GUHA</option>
+<option value="SD NEGERI 2 BATU PANGGUNG">SD NEGERI 2 BATU PANGGUNG</option>
+<option value="SD NEGERI 1 MURUNG B">SD NEGERI 1 MURUNG B</option>
+<option value="SD NEGERI 2 MUNDAR">SD NEGERI 2 MUNDAR</option>
+<option value="SD NEGERI 2 BATU TANGGA">SD NEGERI 2 BATU TANGGA</option>
+<option value="SD NEGERI SUNGAI RANGAS">SD NEGERI SUNGAI RANGAS</option>
+<option value="SD NEGERI 2 AYUANG">SD NEGERI 2 AYUANG</option>
+<option value="SD NEGERI 2 PEMANGKIH SEBERANG">SD NEGERI 2 PEMANGKIH SEBERANG</option>
+<option value="SD NEGERI 1 KASARANGAN">SD NEGERI 1 KASARANGAN</option>
+<option value="SD NEGERI 2 BANUA BUDI">SD NEGERI 2 BANUA BUDI</option>
+<option value="SD NEGERI HAPINGIN">SD NEGERI HAPINGIN</option>
+<option value="SD NEGERI 4 HARUYAN DAYAK">SD NEGERI 4 HARUYAN DAYAK</option>
+<option value="SD NEGERI 1 ABUNG">SD NEGERI 1 ABUNG</option>
+<option value="SD NEGERI HAUR GADING">SD NEGERI HAUR GADING</option>
+<option value="SD NEGERI 3 PANTAI HAMBAWANG BARAT">SD NEGERI 3 PANTAI HAMBAWANG BARAT</option>
+<option value="SD NEGERI KAPAR">SD NEGERI KAPAR</option>
+<option value="SD NEGERI 1 KIAS">SD NEGERI 1 KIAS</option>
+<option value="SD NEGERI 1 SAMHURANG">SD NEGERI 1 SAMHURANG</option>
+<option value="SD NEGERI 2 BAKTI">SD NEGERI 2 BAKTI</option>
+<option value="SD NEGERI KARAU">SD NEGERI KARAU</option>
+<option value="SD NEGERI 2 ALAT">SD NEGERI 2 ALAT</option>
+<option value="SD NEGERI GAMBAH">SD NEGERI GAMBAH</option>
+<option value="SD NEGERI 1 AWANG">SD NEGERI 1 AWANG</option>
+<option value="SD NEGERI 2 TELANG">SD NEGERI 2 TELANG</option>
+<option value="SD NEGERI RANTAU KEMINTING">SD NEGERI RANTAU KEMINTING</option>
+<option value="SD NEGERI 3 MURUNG A">SD NEGERI 3 MURUNG A</option>
+<option value="SD NEGERI 1 BANUA BUDI">SD NEGERI 1 BANUA BUDI</option>
+<option value="SD NEGERI 1 BINJAI PIRUA">SD NEGERI 1 BINJAI PIRUA</option>
+<option value="SD NEGERI 1 MANTAAS">SD NEGERI 1 MANTAAS</option>
+<option value="SD NEGERI 1 AYUANG">SD NEGERI 1 AYUANG</option>
+<option value="SD NEGERI 2 GUHA">SD NEGERI 2 GUHA</option>
+<option value="SD NEGERI 1 LABUNGANAK">SD NEGERI 1 LABUNGANAK</option>
+<option value="SD NEGERI 2 BIRAYANG">SD NEGERI 2 BIRAYANG</option>
+<option value="SD NEGERI PASTING">SD NEGERI PASTING</option>
+<option value="SD NEGERI HINAS KIRI">SD NEGERI HINAS KIRI</option>
+<option value="SD NEGERI 2 ABUNG">SD NEGERI 2 ABUNG</option>
+<option value="SD NEGERI BABAI">SD NEGERI BABAI</option>
+<option value="SD NEGERI 1 KARATUNGAN">SD NEGERI 1 KARATUNGAN</option>
+<option value="SD NEGERI MASIRAAN">SD NEGERI MASIRAAN</option>
+<option value="SD NEGERI 1 ALUAN">SD NEGERI 1 ALUAN</option>
+<option value="SD NEGERI 2 BARABAI BARAT">SD NEGERI 2 BARABAI BARAT</option>
+<option value="SD NEGERI 2 MURUNG B">SD NEGERI 2 MURUNG B</option>
+<option value="SD NEGERI 2 BANUA JINGAH">SD NEGERI 2 BANUA JINGAH</option>
+<option value="SD NEGERI LIMBAR">SD NEGERI LIMBAR</option>
+<option value="SD NEGERI 3 TAPUK">SD NEGERI 3 TAPUK</option>
+<option value="SD NEGERI 3 MURUNG B">SD NEGERI 3 MURUNG B</option>
+<option value="SD NEGERI BANUA BINJAI">SD NEGERI BANUA BINJAI</option>
+<option value="SD NEGERI 2 HILIR BANUA">SD NEGERI 2 HILIR BANUA</option>
+<option value="SD NEGERI 2 JAMIL">SD NEGERI 2 JAMIL</option>
+<option value="SD NEGERI 1 BARU">SD NEGERI 1 BARU</option>
+<option value="SD NEGERI 2 TABUDARAT HILIR">SD NEGERI 2 TABUDARAT HILIR</option>
+<option value="SD NEGERI 2 LABUNGANAK">SD NEGERI 2 LABUNGANAK</option>
+<option value="SD NEGERI 3 MAHANG MATANG LANDUNG">SD NEGERI 3 MAHANG MATANG LANDUNG</option>
+<option value="SD NEGERI 2 KASARANGAN">SD NEGERI 2 KASARANGAN</option>
+<option value="SD NEGERI 1 RANGAS">SD NEGERI 1 RANGAS</option>
+<option value="SD NEGERI 1 GUHA">SD NEGERI 1 GUHA</option>
+<option value="SD NEGERI 4 KINDINGAN">SD NEGERI 4 KINDINGAN</option>
+<option value="SD NEGERI HULU RASAU">SD NEGERI HULU RASAU</option>
+<option value="SD NEGERI 2 PANTAI HAMBAWANG BARAT">SD NEGERI 2 PANTAI HAMBAWANG BARAT</option>
+<option value="SD NEGERI HAPULANG">SD NEGERI HAPULANG</option>
+<option value="SD NEGERI KECIL BATU PERAHU">SD NEGERI KECIL BATU PERAHU</option>
+<option value="SD NEGERI 6 MANGUNANG SEBERANG">SD NEGERI 6 MANGUNANG SEBERANG</option>
+<option value="SD NEGERI 2 BENAWA TENGAH">SD NEGERI 2 BENAWA TENGAH</option>
+<option value="SD NEGERI 2 TAPUK">SD NEGERI 2 TAPUK</option>
+<option value="SD NEGERI 2 SETIAP">SD NEGERI 2 SETIAP</option>
+<option value="SD NEGERI 1 LUNJUK">SD NEGERI 1 LUNJUK</option>
+<option value="SD NEGERI 3 AYUANG">SD NEGERI 3 AYUANG</option>
+<option value="SD MUHAMMADIYAH">SD MUHAMMADIYAH</option>
+<option value="SD NEGERI 1 HILIR BANUA">SD NEGERI 1 HILIR BANUA</option>
+<option value="SD NEGERI 1 MUARA RINTIS">SD NEGERI 1 MUARA RINTIS</option>
+<option value="SD NEGERI 2 TELUK MESJID">SD NEGERI 2 TELUK MESJID</option>
+<option value="SD NEGERI 3 SUNGAI BULUH">SD NEGERI 3 SUNGAI BULUH</option>
+<option value="SD NEGERI PANTAI BATUNG">SD NEGERI PANTAI BATUNG</option>
+<option value="SD NEGERI BIRAYANG SURAPATI">SD NEGERI BIRAYANG SURAPATI</option>
+<option value="SD NEGERI JARANIH">SD NEGERI JARANIH</option>
+<option value="SD NEGERI 2 SAMHURANG">SD NEGERI 2 SAMHURANG</option>
+<option value="SD NEGERI 1 TAAL">SD NEGERI 1 TAAL</option>
+<option value="SD NEGERI 2 BANGKAL">SD NEGERI 2 BANGKAL</option>
+<option value="SD MUHAMMADIYAH BARABAI">SD MUHAMMADIYAH BARABAI</option>
+<option value="SD NEGERI 1 MAHANG SUNGAI HANYAR">SD NEGERI 1 MAHANG SUNGAI HANYAR</option>
+<option value="SD NEGERI 1 TANAH HABANG">SD NEGERI 1 TANAH HABANG</option>
+<option value="SD NEGERI 1 BENAWA TENGAH">SD NEGERI 1 BENAWA TENGAH</option>
+<option value="SD NEGERI WAWAI GARDU">SD NEGERI WAWAI GARDU</option>
+<option value="SD NEGERI 1 MANDINGIN">SD NEGERI 1 MANDINGIN</option>
+<option value="SD NEGERI ALUAN MATI">SD NEGERI ALUAN MATI</option>
+<option value="SD NEGERI MATANG GINALUN">SD NEGERI MATANG GINALUN</option>
+<option value="SD NEGERI MANGUNANG">SD NEGERI MANGUNANG</option>
+<option value="SD NEGERI 2 KAYU RABAH">SD NEGERI 2 KAYU RABAH</option>
+<option value="SD NEGERI PERUMAHAN">SD NEGERI PERUMAHAN</option>
+<option value="SD NEGERI 2 MURUNG A">SD NEGERI 2 MURUNG A</option>
+<option value="SD NEGERI 2 MUARA RINTIS">SD NEGERI 2 MUARA RINTIS</option>
+<option value="SD NEGERI 1 WAWAI">SD NEGERI 1 WAWAI</option>
+<option value="SD NEGERI 1 BANUA JINGAH">SD NEGERI 1 BANUA JINGAH</option>
+<option value="SD NEGERI HANTAKAN">SD NEGERI HANTAKAN</option>
+<option value="SD NEGERI PAYA BESAR">SD NEGERI PAYA BESAR</option>
+<option value="SD NEGERI 2 BINJAI PIRUA">SD NEGERI 2 BINJAI PIRUA</option>
+<option value="SD NEGERI BANUA SUPANGGAL">SD NEGERI BANUA SUPANGGAL</option>
+<option value="SD NEGERI PAHALATAN">SD NEGERI PAHALATAN</option>
+<option value="SD NEGERI 2 KINDINGAN">SD NEGERI 2 KINDINGAN</option>
+<option value="SD NEGERI MARINGGIT">SD NEGERI MARINGGIT</option>
+<option value="SD NEGERI 3 SETIAP">SD NEGERI 3 SETIAP</option>
+<option value="SD NEGERI 2 BARIKIN">SD NEGERI 2 BARIKIN</option>
+<option value="SD NEGERI 1 PEMANGKIH">SD NEGERI 1 PEMANGKIH</option>
+<option value="SD NEGERI 3 LIMPASU">SD NEGERI 3 LIMPASU</option>
+<option value="SD NEGERI 1 MANGUNANG SEBERANG">SD NEGERI 1 MANGUNANG SEBERANG</option>
+<option value="SD NEGERI 2 LIMPASU">SD NEGERI 2 LIMPASU</option>
+<option value="SD NEGERI 1 PEMANGKIH SEBERANG">SD NEGERI 1 PEMANGKIH SEBERANG</option>
+<option value="SD NEGERI BARU">SD NEGERI BARU</option>
+<option value="SD NEGERI 4 SUNGAI BULUH">SD NEGERI 4 SUNGAI BULUH</option>
+<option value="SD NEGERI 2 SUNGAI BULUH">SD NEGERI 2 SUNGAI BULUH</option>
+<option value="SD NEGERI 2 SUNGAI HARANG">SD NEGERI 2 SUNGAI HARANG</option>
+<option value="SD NEGERI KAHAKAN KALIBARU">SD NEGERI KAHAKAN KALIBARU</option>
+<option value="SD NEGERI TANDILANG">SD NEGERI TANDILANG</option>
+<option value="SD NEGERI 1 BARABAI DARAT">SD NEGERI 1 BARABAI DARAT</option>
+<option value="SD NEGERI 1 LOK BESAR">SD NEGERI 1 LOK BESAR</option>
+<option value="SD NEGERI 2 LOK BESAR">SD NEGERI 2 LOK BESAR</option>
+<option value="SD NEGERI 2 BANUA KEPAYANG">SD NEGERI 2 BANUA KEPAYANG</option>
+<option value="SD NEGERI MUARA HUNGI">SD NEGERI MUARA HUNGI</option>
+<option value="SD NEGERI BINJAI PEMANGKIH">SD NEGERI BINJAI PEMANGKIH</option>
+<option value="SD NEGERI 2 KAYU BAWANG">SD NEGERI 2 KAYU BAWANG</option>
+<option value="SD NEGERI LABUHAN">SD NEGERI LABUHAN</option>
+<option value="SD NEGERI 2 MANTAAS">SD NEGERI 2 MANTAAS</option>
+<option value="SD NEGERI KAMBAT UTARA">SD NEGERI KAMBAT UTARA</option>
+<option value="SD NEGERI PANDAWAN">SD NEGERI PANDAWAN</option>
+<option value="SPNF SKB Kabupaten Hulu Sungai Tengah">SPNF SKB Kabupaten Hulu Sungai Tengah</option>
+<option value="SLB Negeri Barabai">SLB Negeri Barabai</option>
+<option value="SMAN 4 BARABAI">SMAN 4 BARABAI</option>
+<option value="SMAN 2 BARABAI">SMAN 2 BARABAI</option>
+<option value="SMAN 1 BARABAI">SMAN 1 BARABAI</option>
+<option value="SMAN 9 BARABAI">SMAN 9 BARABAI</option>
+<option value="SMAN 3 BARABAI">SMAN 3 BARABAI</option>
+<option value="SMAS PGRI BARABAI">SMAS PGRI BARABAI</option>
+<option value="SMAN 7 BARABAI">SMAN 7 BARABAI</option>
+<option value="SMAN 8 BARABAI">SMAN 8 BARABAI</option>
+<option value="SMAN 5 BARABAI">SMAN 5 BARABAI</option>
+<option value="SMAN 6 BARABAI">SMAN 6 BARABAI</option>
+<option value="SMKS GANESYA BARABAI">SMKS GANESYA BARABAI</option>
+<option value="SMKS ANTASARI BARABAI">SMKS ANTASARI BARABAI</option>
+<option value="SMKN 1 BARABAI">SMKN 1 BARABAI</option>
+<option value="SMKS FARMASI BARABAI">SMKS FARMASI BARABAI</option>
+<option value="SMKS DARUL ISTIQAMAH">SMKS DARUL ISTIQAMAH</option>
+<option value="SMK Al-Hidayah Barabai">SMK Al-Hidayah Barabai</option>
+<option value="SMKS MUDA KREATIF">SMKS MUDA KREATIF</option>
+<option value="SMKN 2 BARABAI">SMKN 2 BARABAI</option>
+<option value="SMP NEGERI 1 HULU SUNGAI TENGAH">SMP NEGERI 1 HULU SUNGAI TENGAH</option>
+<option value="SMP NEGERI 30 SATU ATAP HULU SUNGAI TENGAH">SMP NEGERI 30 SATU ATAP HULU SUNGAI TENGAH</option>
+<option value="SMP NEGERI 32 SATU ATAP HULU SUNGAI TENGAH">SMP NEGERI 32 SATU ATAP HULU SUNGAI TENGAH</option>
+<option value="SMP NEGERI 22 HULU SUNGAI TENGAH">SMP NEGERI 22 HULU SUNGAI TENGAH</option>
+<option value="SMP NEGERI 34 SATU ATAP HULU SUNGAI TENGAH">SMP NEGERI 34 SATU ATAP HULU SUNGAI TENGAH</option>
+<option value="SMP NEGERI 16 HULU SUNGAI TENGAH">SMP NEGERI 16 HULU SUNGAI TENGAH</option>
+<option value="SMP NEGERI 17 HULU SUNGAI TENGAH">SMP NEGERI 17 HULU SUNGAI TENGAH</option>
+<option value="SMP NEGERI 33 SATU ATAP HULU SUNGAI TENGAH">SMP NEGERI 33 SATU ATAP HULU SUNGAI TENGAH</option>
+<option value="SMP NEGERI 25 SATU ATAP HULU SUNGAI TENGAH">SMP NEGERI 25 SATU ATAP HULU SUNGAI TENGAH</option>
+<option value="SMP NEGERI 31 SATU ATAP HULU SUNGAI TENGAH">SMP NEGERI 31 SATU ATAP HULU SUNGAI TENGAH</option>
+<option value="SMPIT AL-KHAIR BARABAI">SMPIT AL-KHAIR BARABAI</option>
+<option value="SMP NEGERI 23 HULU SUNGAI TENGAH">SMP NEGERI 23 HULU SUNGAI TENGAH</option>
+<option value="SMP ISLAM MUHAJIRIN">SMP ISLAM MUHAJIRIN</option>
+<option value="SMP NEGERI 29 HULU SUNGAI TENGAH">SMP NEGERI 29 HULU SUNGAI TENGAH</option>
+<option value="SMP NEGERI 26 SATU ATAP HULU SUNGAI TENGAH">SMP NEGERI 26 SATU ATAP HULU SUNGAI TENGAH</option>
+<option value="SMP NEGERI 8 HULU SUNGAI TENGAH">SMP NEGERI 8 HULU SUNGAI TENGAH</option>
+<option value="SMP NEGERI 14 HULU SUNGAI TENGAH">SMP NEGERI 14 HULU SUNGAI TENGAH</option>
+<option value="SMP NEGERI 20 HULU SUNGAI TENGAH">SMP NEGERI 20 HULU SUNGAI TENGAH</option>
+<option value="SMP NEGERI 19 HULU SUNGAI TENGAH">SMP NEGERI 19 HULU SUNGAI TENGAH</option>
+<option value="SMP NEGERI 18 HULU SUNGAI TENGAH">SMP NEGERI 18 HULU SUNGAI TENGAH</option>
+<option value="SMP NEGERI 11 HULU SUNGAI TENGAH">SMP NEGERI 11 HULU SUNGAI TENGAH</option>
+<option value="SMP NEGERI 5 HULU SUNGAI TENGAH">SMP NEGERI 5 HULU SUNGAI TENGAH</option>
+<option value="SMP NEGERI 4 HULU SUNGAI TENGAH">SMP NEGERI 4 HULU SUNGAI TENGAH</option>
+<option value="SMP NEGERI 28 HULU SUNGAI TENGAH">SMP NEGERI 28 HULU SUNGAI TENGAH</option>
+<option value="SMP NEGERI 15 HULU SUNGAI TENGAH">SMP NEGERI 15 HULU SUNGAI TENGAH</option>
+<option value="SMP NEGERI 21 HULU SUNGAI TENGAH">SMP NEGERI 21 HULU SUNGAI TENGAH</option>
+<option value="SMP NEGERI 13 HULU SUNGAI TENGAH">SMP NEGERI 13 HULU SUNGAI TENGAH</option>
+<option value="SMP NEGERI 12 HULU SUNGAI TENGAH">SMP NEGERI 12 HULU SUNGAI TENGAH</option>
+<option value="SMP NEGERI 24 HULU SUNGAI TENGAH">SMP NEGERI 24 HULU SUNGAI TENGAH</option>
+<option value="SMP NEGERI 3 HULU SUNGAI TENGAH">SMP NEGERI 3 HULU SUNGAI TENGAH</option>
+<option value="SMP NEGERI 9 HULU SUNGAI TENGAH">SMP NEGERI 9 HULU SUNGAI TENGAH</option>
+<option value="SMP NEGERI 35 SATU ATAP HULU SUNGAI TENGAH">SMP NEGERI 35 SATU ATAP HULU SUNGAI TENGAH</option>
+<option value="SMP NEGERI 6 HULU SUNGAI TENGAH">SMP NEGERI 6 HULU SUNGAI TENGAH</option>
+<option value="SMP NEGERI 27 HULU SUNGAI TENGAH">SMP NEGERI 27 HULU SUNGAI TENGAH</option>
+<option value="SMP NEGERI 2 HULU SUNGAI TENGAH">SMP NEGERI 2 HULU SUNGAI TENGAH</option>
+<option value="SPS BAHAGIA SEJAHTERA">SPS BAHAGIA SEJAHTERA</option>
+<option value="SPS FIRDAUS">SPS FIRDAUS</option>
+<option value="SPS CERDAS CERIA">SPS CERDAS CERIA</option>
+<option value="SPS Bina Banua">SPS Bina Banua</option>
+<option value="SPS SUKA MAJU">SPS SUKA MAJU</option>
+<option value="SPS Permata Hati 1">SPS Permata Hati 1</option>
+<option value="SPS KHAIRIAH AL-FURQAN">SPS KHAIRIAH AL-FURQAN</option>
+<option value="SPS AS-SALAM">SPS AS-SALAM</option>
+<option value="SPS SEKUNTUM">SPS SEKUNTUM</option>
+<option value="SPS TERATAI">SPS TERATAI</option>
+<option value="SPS ANAK BANGSA..">SPS ANAK BANGSA..</option>
+<option value="SPS MELATI">SPS MELATI</option>
+<option value="SPS MELATI II">SPS MELATI II</option>
+<option value="SPS SAYANG BUNDA">SPS SAYANG BUNDA</option>
+<option value="SPS SAYANG BUNDA">SPS SAYANG BUNDA</option>
+<option value="SPS PERMATA IBUNDA">SPS PERMATA IBUNDA</option>
+<option value="SPS MAWAR">SPS MAWAR</option>
+<option value="SPS Anggrek">SPS Anggrek</option>
+<option value="SPS CINTA IBU">SPS CINTA IBU</option>
+<option value="TK Harapan Bunda">TK Harapan Bunda</option>
+<option value="TK AN NISA">TK AN NISA</option>
+<option value="TK NEGERI 2 PANDAWAN">TK NEGERI 2 PANDAWAN</option>
+<option value="TK MAWAR">TK MAWAR</option>
+<option value="TK PKK BATUNG">TK PKK BATUNG</option>
+<option value="TK HARAPAN BANGSA">TK HARAPAN BANGSA</option>
+<option value="TK NEGERI PEMBINA BARABAI">TK NEGERI PEMBINA BARABAI</option>
+<option value="TK PKK 2 TAPUK">TK PKK 2 TAPUK</option>
+<option value="TK SUMBER HARAPAN II">TK SUMBER HARAPAN II</option>
+<option value="TK PERTIWI">TK PERTIWI</option>
+<option value="TK DEWI SARTIKA">TK DEWI SARTIKA</option>
+<option value="TK SURAPATI">TK SURAPATI</option>
+<option value="TK AL-HUDA">TK AL-HUDA</option>
+<option value="TK NEGERI 1 BARABAI">TK NEGERI 1 BARABAI</option>
+<option value="TK MELATI">TK MELATI</option>
+<option value="TK  MANDINGIN">TK  MANDINGIN</option>
+<option value="TK NEGERI 3 LIMPASU">TK NEGERI 3 LIMPASU</option>
+<option value="TK BINA INSAN I">TK BINA INSAN I</option>
+<option value="TK DWI AYU">TK DWI AYU</option>
+<option value="TK AL - HANIF">TK AL - HANIF</option>
+<option value="TK AL-HIDAYAH">TK AL-HIDAYAH</option>
+<option value="TK NEGERI 4 LABUAN AMAS SELATAN">TK NEGERI 4 LABUAN AMAS SELATAN</option>
+<option value="TK NEGERI 2 BATANG ALAI UTARA">TK NEGERI 2 BATANG ALAI UTARA</option>
+<option value="TK NOR ASIH">TK NOR ASIH</option>
+<option value="TK MELATI TUNAS BARU">TK MELATI TUNAS BARU</option>
+<option value="TK TERPADU AISYIYAH BUSTANUL ATHFAL MAWADDAH">TK TERPADU AISYIYAH BUSTANUL ATHFAL MAWADDAH</option>
+<option value="TK PERMATA HATI 1">TK PERMATA HATI 1</option>
+<option value="TK NEGERI 1 HANTAKAN">TK NEGERI 1 HANTAKAN</option>
+<option value="TK AR-RAHIM">TK AR-RAHIM</option>
+<option value="TK AN-NUUR">TK AN-NUUR</option>
+<option value="TK TUNAS HARAPAN">TK TUNAS HARAPAN</option>
+<option value="TK USWATUN HASANAH">TK USWATUN HASANAH</option>
+<option value="TK HADIKAT">TK HADIKAT</option>
+<option value="TK SUMBER HARAPAN I">TK SUMBER HARAPAN I</option>
+<option value="TK KEMALA BHAYANGKARI 08">TK KEMALA BHAYANGKARI 08</option>
+<option value="TK IT TARBIATUL AULAD">TK IT TARBIATUL AULAD</option>
+<option value="TK AMANAH">TK AMANAH</option>
+<option value="TK CEMPAKA">TK CEMPAKA</option>
+<option value="TK PERTIWI">TK PERTIWI</option>
+<option value="TK Sehati">TK Sehati</option>
+<option value="TK RAUDHA TUSSIBIYAN">TK RAUDHA TUSSIBIYAN</option>
+<option value="TK  KEMUNING BARABAI DARAT">TK  KEMUNING BARABAI DARAT</option>
+<option value="TK ANAK BANGSA">TK ANAK BANGSA</option>
+<option value="TK NEGERI PEMBINA">TK NEGERI PEMBINA</option>
+<option value="TK HAUR KUNING">TK HAUR KUNING</option>
+<option value="TK NEGERI 1 LIMPASU">TK NEGERI 1 LIMPASU</option>
+<option value="TK MERPATI">TK MERPATI</option>
+<option value="TK HARAPAN IBU">TK HARAPAN IBU</option>
+<option value="TK  AYUANG">TK  AYUANG</option>
+<option value="TK SINAR PAGI">TK SINAR PAGI</option>
+<option value="TK CITRA MULIA">TK CITRA MULIA</option>
+<option value="TK NEGERI 1 BATANG ALAI UTARA">TK NEGERI 1 BATANG ALAI UTARA</option>
+<option value="TK NEGERI 2 BARABAI">TK NEGERI 2 BARABAI</option>
+<option value="TK MAWAR">TK MAWAR</option>
+<option value="TK ISLAM TERPADU AL-KHAIR">TK ISLAM TERPADU AL-KHAIR</option>
+<option value="TK Terpadu Cerdas Mandiri">TK Terpadu Cerdas Mandiri</option>
+<option value="TK ADIE DHARMA">TK ADIE DHARMA</option>
+<option value="TK TUNAS MEKAR">TK TUNAS MEKAR</option>
+<option value="TK MEKAR SARI">TK MEKAR SARI</option>
+<option value="TK ROSE">TK ROSE</option>
+<option value="TK NEGERI 4 BARABAI">TK NEGERI 4 BARABAI</option>
+<option value="TK JAYAPATI ABUNG">TK JAYAPATI ABUNG</option>
+<option value="TK KARTINI">TK KARTINI</option>
+<option value="TK KASIH BUNDA">TK KASIH BUNDA</option>
+<option value="TK NEGERI 3 LABUAN AMAS SELATAN">TK NEGERI 3 LABUAN AMAS SELATAN</option>
+<option value="TK TUNAS HARAPAN II">TK TUNAS HARAPAN II</option>
+<option value="TK AISYIYAH BUSTANUL ATHFAL">TK AISYIYAH BUSTANUL ATHFAL</option>
+<option value="TK HARAPAN BUNDA">TK HARAPAN BUNDA</option>
+<option value="TK NEGERI 2 BATANG ALAI SELATAN">TK NEGERI 2 BATANG ALAI SELATAN</option>
+<option value="TK IDHATA VI">TK IDHATA VI</option>
+<option value="TK AR RAUDAH">TK AR RAUDAH</option>
+<option value="TK NEGERI 3 BATU BENAWA">TK NEGERI 3 BATU BENAWA</option>
+<option value="TK TK NEGERI 4 BATANG ALAI SELATAN">TK TK NEGERI 4 BATANG ALAI SELATAN</option>
+<option value="TK DWI SARTIKA">TK DWI SARTIKA</option>
+<option value="TK BINA BERSAMA">TK BINA BERSAMA</option>
+<option value="TK PKK LIMPASU">TK PKK LIMPASU</option>
+<option value="TK IDHATA I">TK IDHATA I</option>
+<option value="TK Permata Bunda">TK Permata Bunda</option>
+<option value="TK DAHLIA">TK DAHLIA</option>
+<option value="TK MUARIFIN">TK MUARIFIN</option>
+<option value="TK KENANGA">TK KENANGA</option>
+<option value="TK HARAPAN IBU">TK HARAPAN IBU</option>
+<option value="TK GELATIK">TK GELATIK</option>
+<option value="TAUD SaQu Al Umm Barabai">TAUD SaQu Al Umm Barabai</option>
+<option value="TK AL-HAYAT">TK AL-HAYAT</option>
+<option value="TK PGRI III">TK PGRI III</option>
+<option value="TK ISLAM IBNUL AMIN..">TK ISLAM IBNUL AMIN..</option>
+<option value="TK NEGERI 1 BATANG ALAI SELATAN">TK NEGERI 1 BATANG ALAI SELATAN</option>
+<option value="TK KARTIKA V-33">TK KARTIKA V-33</option>
+<option value="TK INSAN">TK INSAN</option>
+<option value="TK ALHIDAYAH II">TK ALHIDAYAH II</option>
+<option value="TK PERTIWI">TK PERTIWI</option>
+<option value="TK PKK PIHANDAM">TK PKK PIHANDAM</option>
+<option value="TK AL HUSNA">TK AL HUSNA</option>
+<option value="TK NURRAHMAN">TK NURRAHMAN</option>
+<option value="TK SIBUYUNG">TK SIBUYUNG</option>
+<option value="TK  MANDINGIN 2 BARABAI">TK  MANDINGIN 2 BARABAI</option>
+<option value="TK KARTIKA V-25">TK KARTIKA V-25</option>
+<option value="TK AISYIYAH BUSTANUL ATHFAL">TK AISYIYAH BUSTANUL ATHFAL</option>
+<option value="TK RUHUI">TK RUHUI</option>
+<option value="TK NEGERI 1 BATANG ALAI TIMUR">TK NEGERI 1 BATANG ALAI TIMUR</option>
+<option value="TK NEGERI 1 BATU BENAWA">TK NEGERI 1 BATU BENAWA</option>
+<option value="TK BUDI MULIA">TK BUDI MULIA</option>
+<option value="TK PKK TAPUK">TK PKK TAPUK</option>
+<option value="PAUD TERPADU MASIRAAN CERIA">PAUD TERPADU MASIRAAN CERIA</option>
+<option value="TK NEGERI 1 LABUAN AMAS SELATAN">TK NEGERI 1 LABUAN AMAS SELATAN</option>
+<option value="TK AISYIYAH BUSTANUL ATHFAL">TK AISYIYAH BUSTANUL ATHFAL</option>
+<option value="TK SWADAYA">TK SWADAYA</option>
+<option value="TK RAKAT MUFAKAT">TK RAKAT MUFAKAT</option>
+<option value="TK KERAMAT">TK KERAMAT</option>
+<option value="TK MEKAR BANDANG">TK MEKAR BANDANG</option>
+<option value="TK NEGERI 2 LIMPASU">TK NEGERI 2 LIMPASU</option>
+<option value="TK MELATI MARINGGIT">TK MELATI MARINGGIT</option>
+<option value="TK KEMALA BHAYANGKARI 07">TK KEMALA BHAYANGKARI 07</option>
+<option value="TK HARAPAN BANGSA">TK HARAPAN BANGSA</option>
+<option value="TK TUNAS BANGSA">TK TUNAS BANGSA</option>
+<option value="TK SINAR SWARGA">TK SINAR SWARGA</option>
+<option value="TK NEGERI 1 PANDAWAN">TK NEGERI 1 PANDAWAN</option>
+<option value="TK MULIA KARATUNGAN">TK MULIA KARATUNGAN</option>
+<option value="TK HARAPAN MASA">TK HARAPAN MASA</option>
+<option value="TK ANGGREK">TK ANGGREK</option>
+<option value="TK MAHANG BARU">TK MAHANG BARU</option>
+<option value="TK NEGERI 2 BATU BENAWA">TK NEGERI 2 BATU BENAWA</option>
+<option value="TK DAHLIA">TK DAHLIA</option>
+<option value="TK BINA BERSAMA GAYABA">TK BINA BERSAMA GAYABA</option>
+<option value="TK RAUDAH">TK RAUDAH</option>
+<option value="TK NEGERI 2 HANTAKAN">TK NEGERI 2 HANTAKAN</option>
+<option value="TK THAHIRIYAH HAMIDIYAH">TK THAHIRIYAH HAMIDIYAH</option>
+<option value="TK TUNAS BARU">TK TUNAS BARU</option>
+<option value="TK NEGERI 1 HARUYAN">TK NEGERI 1 HARUYAN</option>
+<option value="TK BINA INSAN II">TK BINA INSAN II</option>
+<option value="TK NEGERI 3 LABUAN AMAS UTARA">TK NEGERI 3 LABUAN AMAS UTARA</option>
+<option value="TK KASIH IBU KABANG">TK KASIH IBU KABANG</option>
+<option value="TK RAHMAT">TK RAHMAT</option>
+<option value="TK ANGGREK">TK ANGGREK</option>
+<option value="TK IDHATA IV">TK IDHATA IV</option>
+<option value="TK SAYANG IBU">TK SAYANG IBU</option>
+<option value="TK HARAPAN MASA">TK HARAPAN MASA</option>
+<option value="TK PERTIWI ">TK PERTIWI </option>
+<option value="TK AL FAJAR">TK AL FAJAR</option>
+<option value="TK ROKHANIYAH MUSLIMAT NU">TK ROKHANIYAH MUSLIMAT NU</option>
+<option value="TK DHARMA WANITA ">TK DHARMA WANITA </option>
+<option value="TK NEGERI 3 BARABAI">TK NEGERI 3 BARABAI</option>
+<option value="TK BINA KARYA">TK BINA KARYA</option>
+<option value="TK SINAR BAKUNG">TK SINAR BAKUNG</option>
+<option value="TK  BINTANG KECIL">TK  BINTANG KECIL</option>
+<option value="TK PKK ABUNG SURAPATI">TK PKK ABUNG SURAPATI</option>
+<option value="TK Sefakat">TK Sefakat</option>
+<option value="TK IDHATA III PGRI">TK IDHATA III PGRI</option>
+<option value="TK SINAR HARAPAN">TK SINAR HARAPAN</option>
+<option value="TK MELATI">TK MELATI</option>
+<option value="TK RAKAT MUFAKAT">TK RAKAT MUFAKAT</option>
+<option value="TK NEGERI 5 BATU BENAWA">TK NEGERI 5 BATU BENAWA</option>
+<option value="TK BINA HARAPAN">TK BINA HARAPAN</option>
+<option value="TK BUDI UTAMA">TK BUDI UTAMA</option>
+<option value="TK NEGERI 3 BATANG ALAI SELATAN">TK NEGERI 3 BATANG ALAI SELATAN</option>
+<option value="TK NUSA INDAH">TK NUSA INDAH</option>
+<option value="TK MEKAR SARI">TK MEKAR SARI</option>
+<option value="TK MAJU BERSAMA">TK MAJU BERSAMA</option>
+<option value="TK AL-HUSNA">TK AL-HUSNA</option>
+<option value="TK NEGERI 4 BATU BENAWA">TK NEGERI 4 BATU BENAWA</option>
+<option value="TK PGRI II ">TK PGRI II </option>
+<option value="TK NEGERI 1 LABUAN AMAS UTARA">TK NEGERI 1 LABUAN AMAS UTARA</option>
+<option value="TK KENANGA">TK KENANGA</option>
+<option value="TK TERATAI">TK TERATAI</option>
+<option value="TK NEGERI 4 PANDAWAN">TK NEGERI 4 PANDAWAN</option>
+<option value="TK NURUL AMIN">TK NURUL AMIN</option>
+<option value="TK IZATUNNAFSI">TK IZATUNNAFSI</option>
+<option value="TK NEGERI 3 PANDAWAN">TK NEGERI 3 PANDAWAN</option>
+<option value="TK TUNAS HARAPAN 1">TK TUNAS HARAPAN 1</option>
+<option value="TK NEGERI 2 LABUAN AMAS UTARA">TK NEGERI 2 LABUAN AMAS UTARA</option>
+<option value="TK TUNAS HARAPAN">TK TUNAS HARAPAN</option>
+<option value="TK NEGERI 4 LIMPASU">TK NEGERI 4 LIMPASU</option>
+<option value="TK MELATI">TK MELATI</option>
+<option value="TK CAHAYA ABADI">TK CAHAYA ABADI</option>
+<option value="TK RAUDATUL ATFAL">TK RAUDATUL ATFAL</option>
+<option value="TK BERSAMA">TK BERSAMA</option>
+<option value="TK PERMATA BUNDA HARUYAN">TK PERMATA BUNDA HARUYAN</option>
+<option value="TK PKK KARATUNGAN..">TK PKK KARATUNGAN..</option>
+<option value="TK SEJAHTERA">TK SEJAHTERA</option>
+<option value="TK Anugerah">TK Anugerah</option>
+<option value="TK AL-HIDAYAH">TK AL-HIDAYAH</option>
+<option value="TK AL-IKHLAS">TK AL-IKHLAS</option>
+<option value="TK CENDERAWASIH">TK CENDERAWASIH</option>
+<option value="TK NEGERI 2 LABUAN AMAS SELATAN">TK NEGERI 2 LABUAN AMAS SELATAN</option>
+<option value="TK TRISULA">TK TRISULA</option>
+<option value="TK NEGERI PEMBINA ">TK NEGERI PEMBINA </option>
+<option value="TK HIDUP BARU">TK HIDUP BARU</option>
+<option value="TK AISYIYAH BUSTANUL ATHFAL">TK AISYIYAH BUSTANUL ATHFAL</option>
+<option value="TK KENANGA">TK KENANGA</option>
+<option value="TK HARAPAN BANGSA">TK HARAPAN BANGSA</option>
+<option value="TK IDHATA V">TK IDHATA V</option>
+<option value="TK TUNAS HARAPAN">TK TUNAS HARAPAN</option>
+<option value="TPA TERATAI">TPA TERATAI</option>
+<option value="TPA TERPADU AISYIYAH MAWADDAH">TPA TERPADU AISYIYAH MAWADDAH</option>
+<option value="TPA ISLAM TEPADU AL-KHAIR">TPA ISLAM TEPADU AL-KHAIR</option>
+<option value="TPA AN-NUR">TPA AN-NUR</option>
+<option value="TPA Terpadu Cerdas Mandiri">TPA Terpadu Cerdas Mandiri</option>
+<option value="TPA AL HANIF">TPA AL HANIF</option>
+<option value="TPA MARHAMAH">TPA MARHAMAH</option>
+<option value="TPA TRISULA">TPA TRISULA</option>
+<option value="TPA BINTANG KECIL 1">TPA BINTANG KECIL 1</option>
+<option value="TPA MURAKATA">TPA MURAKATA</option>
+
+                            </select>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <div class="segment">
+                    <fieldset>
+                        <legend for="1563239312"><i class="fas fa-map-marker-alt icon"></i>Alamat Lengkap</legend>
+                        <fieldset>
+                            <legend for="481018578"><i class="fas fa-map icon"></i>Kecamatan</legend>
+                            <div class="form-group">
+                                <select id="481018578" name="entry.1573725485" class="form-control select2" required>
+                                    <option value="" disabled selected>Pilih Kecamatan</option>
+                                    <option value="Batang Alai Selatan">Batang Alai Selatan</option>
+                                    <option value="Batang Alai Timur">Batang Alai Timur</option>
+                                    <option value="Batang Alai Utara">Batang Alai Utara</option>
+                                    <option value="Barabai">Barabai</option>
+                                    <option value="Batu Benawa">Batu Benawa</option>
+                                    <option value="Hantakan">Hantakan</option>
+                                    <option value="Haruyan">Haruyan</option>
+                                    <option value="Labuan Amas Selatan">Labuan Amas Selatan</option>
+                                    <option value="Labuan Amas Utara">Labuan Amas Utara</option>
+                                    <option value="Limpasu">Limpasu</option>
+                                    <option value="Pandawan">Pandawan</option>
+                                </select>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend for="2083882117"><i class="fas fa-home icon"></i>Kelurahan/Desa</legend>
+                            <div class="form-group">
+                                <input id="2083882117" type="text" name="entry.1704313732" class="form-control" required placeholder="Contoh : Desa Batu Tangga">
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend for="80090731"><i class="fas fa-road icon"></i>Alamat Jalan</legend>
+                            <div class="form-group">
+                                <input id="311363655" type="text" name="entry.311363655" class="form-control" required placeholder="Contoh : Jalan Surapati">
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend for="1488395212"><i class="fas fa-hashtag icon"></i>Nomor</legend>
+                            <div class="form-group">
+                                <input id="1371402680" type="number" name="entry.1371402680" class="form-control" required placeholder="Contoh : 11">
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend for="733654994"><i class="fas fa-sort-numeric-up icon"></i>RT</legend>
+                            <div class="form-group">
+                                <input id="657688184" type="number" name="entry.657688184" class="form-control" required placeholder="Contoh : 12">
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend for="718791167"><i class="fas fa-sort-numeric-down icon"></i>RW</legend>
+                            <div class="form-group">
+                                <input id="1412725591" type="number" name="entry.1412725591" class="form-control" required placeholder="Contoh : 10">
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend for="1168891343"><i class="fas fa-map-pin icon"></i>Titik Koordinat<button class="guide-button" onclick="showGuideModal()" type="button">
+          <i class="fas fa-info-circle">
+          </i>
+          Petunjuk
+         </button></legend>
+                            <div class="form-group">
+                                <input id="49008165" type="text" name="entry.49008165" class="form-control" required placeholder="Contoh : -2.527398301914407, 115.51854043675021">
+                            </div>
+                        </fieldset>
+                    </fieldset>
+                </div>
+
+                <div class="segment">
+                    <fieldset>
+                        <legend for="1551041700"><i class="fas fa-network-wired icon"></i>Data Akses Jaringan Listrik dan Internet</legend>
+                        <fieldset>
+                            <legend for="816518773"><i class="fas fa-bolt icon"></i>Jaringan Listrik PLN</legend>
+                            <div class="form-group btn-group-toggle" data-toggle="buttons">
+                                <button type="button" class="btn btn-outline-primary" onclick="selectOption('entry.206584888', 'Ada')">Ada</button>
+                                <button type="button" class="btn btn-outline-primary" onclick="selectOption('entry.206584888', 'Tidak Ada')">Tidak Ada</button>
+                                <input type="hidden" name="entry.206584888" id="entry.206584888" required>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend for="402385989"><i class="fas fa-microchip icon"></i>Jaringan Fiber Optik</legend>
+                            <div class="form-group btn-group-toggle" data-toggle="buttons">
+                                <button type="button" class="btn btn-outline-primary" onclick="selectOption('entry.415655906', 'Ada')">Ada</button>
+                                <button type="button" class="btn btn-outline-primary" onclick="selectOption('entry.415655906', 'Tidak Ada')">Tidak Ada</button>
+                                <input type="hidden" name="entry.415655906" id="entry.415655906" required>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend for="1828006276"><i class="fas fa-signal icon"></i>Jaringan Seluler</legend>
+                            <div class="form-group btn-group-toggle" data-toggle="buttons">
+                                <button type="button" class="btn btn-outline-primary" onclick="selectOption('entry.1373371223', 'Ada')">Ada</button>
+                                <button type="button" class="btn btn-outline-primary" onclick="selectOption('entry.1373371223', 'Tidak Ada')">Tidak Ada</button>
+                                <input type="hidden" name="entry.1373371223" id="entry.1373371223" required>
+                            </div>
+                        </fieldset>
+                    </fieldset>
+                </div>
+
+                <div class="segment">
+                    <fieldset>
+                        <legend for="1171062606"><i class="fas fa-user-tie icon"></i>PIC Satuan Pendidikan</legend>
+                        <fieldset>
+                            <legend for="862108377"><i class="fas fa-user icon"></i>Nama Kepala Satuan Pendidikan</legend>
+                            <div class="form-group">
+                                <input id="1395034768" type="text" name="entry.1395034768" class="form-control" required placeholder="Contoh : Fatimah, S.Pd."> 
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend for="1119851834"><i class="fas fa-phone icon"></i>Nomor HP/WA Kepala Satuan Pendidikan</legend>
+                            <div class="form-group">
+                                <input id="1137553712" type="number" name="entry.1137553712" class="form-control" required placeholder="Contoh : 085298878787">
+                            </div>
+                        </fieldset>
+                    </fieldset>
+                </div>
+
+                <input type="hidden" name="fvv" value="1">
+                <input type="hidden" name="fbzx" value="114264285872252359">
+                <input type="hidden" name="pageHistory" value="0">
+
+                <input class="btn btn-primary" type="submit" value="Kirim Data">
+            </form>
+        </div>
+    </div>
+
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+                <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+            </svg>
+            <h2>Data Berhasil Dikirim</h2>
+        </div>
+    </div>
+
+    <div class="modal" id="guideModal">
+   <div class="modal-content">
+    <span class="close" onclick="closeGuideModal()">
+     <i class="fa fa-times-circle"></i>
+    </span>
+    <img alt="Petunjuk tata cara pengisian titik koordinat dengan peta dan langkah-langkah detail" src="https://blogger.googleusercontent.com/img/a/AVvXsEgAG2eTHi_xPrP8OHF15sz9rDdC8HbjcqmFSEYeoMu5b3EJ9K01FmtRXg9NZZHur-qLJkVZFOdeYCdMsDbBAQukU5HefWLfN5cd-mjq1_A86mE1akLG_SXlMEt-J8CSD6NvStWxtWPxyPvaO9XfCF8GUsNW1BlyoDRBvsQIKPosTH_amwmh1yNt7_gUYr-k=s16000"/>
+   </div>
+  </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js" integrity="sha256-2Pjr1OlpZMY6qesJM68t2v39t+lMLvxwpa8QlRjJroA=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.select2').select2();
+        });
+
+        $('#bootstrapForm').submit(function (event) {
+            event.preventDefault();
+            var extraData = {};
+            $('#bootstrapForm').ajaxSubmit({
+                data: extraData,
+                dataType: 'jsonp',
+                success: function () {
+                    showSuccessModal();
+                },
+                error: function () {
+                    showSuccessModal();
+                }
+            });
+        });
+
+        function selectOption(name, value) {
+            document.getElementById(name).value = value;
+            var buttons = document.querySelectorAll('button[onclick*="' + name + '"]');
+            buttons.forEach(button => {
+                button.classList.remove('active');
+            });
+            var selectedButton = document.querySelector('button[onclick*="' + name + '"][onclick*="' + value + '"]');
+            selectedButton.classList.add('active');
+        }
+
+        function showSuccessModal() {
+            var modal = document.getElementById("successModal");
+            modal.style.display = "block";
+            setTimeout(function() {
+                document.getElementById("bootstrapForm").reset();
+                window.location.href = "success.html";
+            }, 3000);
+        }
+
+        function showGuideModal() {
+            var modal = document.getElementById("guideModal");
+            modal.style.display = "block";
+        }
+
+        function closeGuideModal() {
+            var modal = document.getElementById("guideModal");
+            modal.style.display = "none";
+        }
+    </script>
+</body>
+</html>
